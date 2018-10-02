@@ -1,0 +1,99 @@
+body {
+    font-family: sans-serif;
+    background-color:black;
+    height: 100%;
+}
+
+html, body, #app, #app>div, #root {
+  height: 100%
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+    padding-left: 0;
+    margin-top:0px;
+}
+
+
+.sidenav a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    display: block;
+    transition: 0.3s;    
+}
+
+.sidenav input {
+    margin-left: 8px;
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    display: block;
+    transition: 0.3s;    
+}
+
+.listDecoration{
+    margin-top: 20px;
+    padding: 8px 8px 8px 8px;
+}
+
+.sidenav h1,h2,h3,p{
+    color: white;
+    padding:8px 8px 8px 8px ;
+}
+
+.sidenav a:hover {
+    color: yellow;
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.container {
+    transition: margin-left .5s;
+    padding: 8px;
+    background-color:#111;
+    height: 100%;
+    color:white;
+}
+
+.wrap{
+    width:100%;
+    height:100%;
+}
+
+#map {
+   height: 100%;
+}
+
+p.round {
+    border: 1px solid yellow;
+    border-radius: 12px;
+    margin: 5px;
+}
+
+.textColor{
+    color:black;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
