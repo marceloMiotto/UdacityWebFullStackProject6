@@ -1,11 +1,11 @@
 # Udacity Web FullStack Project 6
-    Third project at Udacity Nanodegree Web FullStack.
+    Sixth project at Udacity Nanodegree Web FullStack.
     This project was written in HTML, CSS and React the result is a Neighborhood Map
 
-#Frameworks
+# Frameworks
     React 
     
-#API
+# API
     Google Maps
     Wikipedia
 
