@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from'./classes/Map';
 import escapeRegExp  from 'escape-string-regexp'
-import filterIcon from './filterIcon.png';
+
 
 
 const wikiApi = 'https://pt.wikipedia.org/api/rest_v1/page/summary/';
@@ -128,7 +128,7 @@ class App extends Component {
       
         return (<div className="wrap">
                     <div id="mySidenav" className="sidenav">
-                        <a href="javascript:void(0)" className="closebtn" onClick={() => this.closeNav()}>&times;</a>
+                        <a href="" className="closebtn" onClick={() => this.closeNav()}>&times;</a>
                         <h3>Menino Deus - POA </h3>
                         <input 
                             type="text"
@@ -138,10 +138,10 @@ class App extends Component {
                         />
                         <div id="list" className="listDecoration">
                            {showingMarkers.map((markers) => (
-                               <a href="javascript:void(0)" id={markers.id} key={markers.id} onClick={() => this.getContent(markers.title_api)} >{ markers.title }</a>))}
+                               <a href="" id={markers.id} key={markers.id} onClick={() => this.getContent(markers.title_api)} >{ markers.title }</a>))}
                         </div>
                         <div id="sideContent">
-                            {this.state.contentList != '' &&
+                            {this.state.contentList !== '' &&
                                 <p className="round">{this.state.contentList}</p>
                             }
                         </div>

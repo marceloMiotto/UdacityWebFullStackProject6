@@ -9,10 +9,11 @@
     Google Maps
     Wikipedia
 
-# To run this app you will need 
+# To run this app you will need to perform the steps below (cmd window)
     Install the Create React
-        From a command window run the command: npm install -g create-react-app
-    Download and unzip the project or clone the project 
+        run the command: npm install -g create-react-app
+        then run the command: create-react-app nbhmap
+    Download and unzip the entire project files to nbhmap created on step above
     Inside the directory "nbhmap" run the command: npm start
 
 # How to use the app

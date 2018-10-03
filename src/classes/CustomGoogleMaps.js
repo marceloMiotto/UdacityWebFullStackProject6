@@ -1,5 +1,5 @@
 /*global google*/
-import React, { Component } from 'react';
+import React from 'react';
 
 var map;
 var markers = [];
