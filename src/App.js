@@ -76,13 +76,13 @@ class App extends Component {
         this.closeNav = this.closeNav.bind(this);
         this.getContent = this.getContent.bind(this);
 
-         
     }
     
     state = {
         query:'',
         contentList : '',
-        error: null
+        error: null,
+        linkTitle:''
       
     }   
   
@@ -91,30 +91,42 @@ class App extends Component {
         this.setState({ query: query})
     }
   
-    closeNav() {
+    closeNav(e) {
+        e.preventDefault();
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("content").style.marginLeft= "0";
         document.getElementById("buttonOpen").style.display = "block";
         this.setState({contentList:''});
     } 
-     
-    getContent(title_api){
+
+
+    getContent(e, title_api, linkTitle){
+        e.preventDefault();
+        console.log("link clicked "+linkTitle);
+        this.setState({linkTitle:linkTitle});
         fetch(wikiApi+title_api)
         .then(res => res.json())
         .then(
         (result) => {
-            this.setState({
-            contentList: result.extract
-          });
+            if(result.title === "Not found."){
+                this.setState({
+                    contentList: "Desculpa, mas a API não esta retornando as informações"
+                });
+            }
+            else{
+                this.setState({
+                    contentList: result.extract
+                });
+            }
         },
         (error) => {
             this.setState({
-            contentList: error
+            contentList: "Desculpa, mas a API não esta retornando informações."
           });
+          console.log(error);
         }
         )
      }
-  
   
     render() {
     
@@ -128,7 +140,7 @@ class App extends Component {
       
         return (<div className="wrap">
                     <div id="mySidenav" className="sidenav">
-                        <a href="" className="closebtn" onClick={() => this.closeNav()}>&times;</a>
+                        <a href="" className="closebtn" onClick={ e => this.closeNav(e)}>&times;</a>
                         <h3>Menino Deus - POA </h3>
                         <input 
                             type="text"
@@ -138,7 +150,7 @@ class App extends Component {
                         />
                         <div id="list" className="listDecoration">
                            {showingMarkers.map((markers) => (
-                               <a href="" id={markers.id} key={markers.id} onClick={() => this.getContent(markers.title_api)} >{ markers.title }</a>))}
+                               <a href="" id={markers.id} key={markers.id} onClick={ e => this.getContent(e, markers.title_api, markers.title )} >{ markers.title }</a>))}
                         </div>
                         <div id="sideContent">
                             {this.state.contentList !== '' &&
@@ -146,9 +158,8 @@ class App extends Component {
                             }
                         </div>
                     </div>
-                    <Map markers={showingMarkers}/>
+                    <Map markers={showingMarkers} linkTitle={this.state.linkTitle}/>
                 </div>
-           
                );
     }
 }

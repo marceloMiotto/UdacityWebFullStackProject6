@@ -77,7 +77,12 @@ class CustomGoogleMaps extends React.Component{
                                  '<p class="textColor"> fonte do site oficial: <a href=' + mark.oficial_site+ ' >' + mark.oficial_site + '<a/></p>'+
                                  '</div>'+
                                  '</div>';
-             this.attachContent(marker1, contentString)
+             this.attachContent(marker1, contentString);
+             
+             if(this.props.linkTitle === marker1.title ){
+                 marker1.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+                 marker1.setAnimation(google.maps.Animation.DROP);
+             } 
             
             markers.push(marker1);
         

@@ -10,11 +10,11 @@
     Wikipedia
 
 # To run this app you will need to perform the steps below (cmd window)
-    Install the Create React
-        run the command: npm install -g create-react-app
-        then run the command: create-react-app nbhmap
-    Download and unzip the entire project files to nbhmap created on step above
-    Inside the directory "nbhmap" run the command: npm start
+    Create a directory called "nbhmap"
+    Download and unzip the entire project files to directory "nbhmap" created on step above
+    Inside the directory "nbhmap" run the commands below: 
+        * npm install
+        * npm start
 
 # How to use the app
     The app is a neighborhood map, from "Menino Deus, Porto Alegre - Brazil"

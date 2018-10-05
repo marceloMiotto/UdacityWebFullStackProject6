@@ -33,6 +33,7 @@ html, body, #app, #app>div, #root {
     transition: 0.3s;    
 }
 
+
 .sidenav input {
     margin-left: 8px;
     padding: 8px 8px 8px 8px;

@@ -8,7 +8,7 @@ class Map extends React.Component{
          this.openNav = this.openNav.bind(this);
          
      }
-   
+        
      openNav() {
          document.getElementById("mySidenav").style.width = "250px";
          document.getElementById("content").style.marginLeft = "250px";
@@ -18,7 +18,7 @@ class Map extends React.Component{
     render() {
        return (<div id="content" className="container">
                    <span id="buttonOpen" onClick={() => this.openNav()}>&#9776; </span>
-                   <CustomGoogleMaps markers= {this.props.markers}/>
+                   <CustomGoogleMaps markers= {this.props.markers} linkTitle={ this.props.linkTitle }/>
                </div>
               );
    }
